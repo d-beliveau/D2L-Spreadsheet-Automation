@@ -2,12 +2,16 @@
 
 This repository countains a suite of tools for automatically integrating spreadsheet-based marking reports into the D2L Brightspace gradebook.
 
-### Current functionality
+## Functionality
 
-#### 1. Update master spreadsheet with data from individual spreadsheets
+### 1. Update master spreadsheet with data from individual spreadsheets
+###### CLI
+Run `update_master.py [.../master_sheet.xlsx] [.../group_sheets/]`
+##### GUI
+Select your master spreadsheet and your group sheets directory, and click run.
 
-`update_master.py` in a directory which contains a provided master spreadsheet called `master_sheet.xlsx` and a sub-directory `group_sheets` which contains the individual group marking reports.
-    - Test data provided
+### 2. Scrape D2L
+...
 
 ### Future functionality
 
@@ -24,7 +28,5 @@ Python 3 and the following packages:
 
 Run `pip install pandas openpyxl` in terminal to install packages
 
-### Authors
-
-- Dane Beliveau
-- Wayne Eberly
+## Authors
+Developed by Dane Beliveau and Wayne Eberly at the University of Calgary.

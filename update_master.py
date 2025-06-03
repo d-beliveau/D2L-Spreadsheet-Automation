@@ -2,9 +2,9 @@ import pandas as pd
 import glob
 import os
 
+# Update master spreadsheet with group grades from individual group spreadsheets.
+# Cell locations for names and grades are presently hard coded.
 def update_master(master_path, group_folder):
-    # Always overwrite the input master file
-
     master_df = pd.read_excel(master_path)
     email_to_index = {email: idx for idx, email in enumerate(master_df["Email"])}
     group_files = glob.glob(os.path.join(group_folder, "*.xlsx"))
@@ -26,7 +26,7 @@ def update_master(master_path, group_folder):
     master_df.to_excel(master_path, index=False)
     return master_path
 
-# Add CLI support if run directly
+# CLI
 if __name__ == "__main__":
     import argparse
 
@@ -38,6 +38,6 @@ if __name__ == "__main__":
 
     try:
         out = update_master(args.master, args.group_folder)
-        print(f"✅ Success! Master file updated: {out}")
+        print(f"Success! Master file updated: {out}")
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"Error: {e}")
